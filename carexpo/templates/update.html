@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+<h3>Update car details</h3>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    
+    <button>
+        Submit
+    </button>
+</form>
+<!-- {% for msg in messages %}
+{{msg}}
+{% endfor %} -->
+{% endblock %}

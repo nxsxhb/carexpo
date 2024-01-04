@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2 style="text-align: center;">Car list</h2>
+<div class="container">
+    <div class="row" style="padding-top: 20px;">  
+        {% for i in car_list %}
+        <div class="col-md-3">            
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{i.image.url}}" alt="{{i.model_name}} width="200px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.brand_name}}</h5>
+                  <p class="card-text">{{i.model_name}}</p>
+                  <a href="{% url 'carexpo_app:detail' i.id %}" class="btn btn-primary">Details</a>
+                </div>
+              </div>        
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
